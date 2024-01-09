@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Background animé JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sec"></section>
+    <script>
+        <!-- Création des petits carrés -->
+        for (let i = 1; i <= 800; i++){
+            let box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('.sec').appendChild(box);
+        }
+
+        function animteBx(){
+            let boxes = document.querySelectorAll('.box');
+            let num = Math.floor(Math.random() * boxes.length);
+            boxes[num].classList.toggle('animate');
+        }
+        setInterval(animteBx);
+    </script>
+</body>
+</html>
